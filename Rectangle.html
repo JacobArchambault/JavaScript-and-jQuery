@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Calculate area and perimeter of a rectangle</title>
+	<script>
+	// function declarations.
+		function calculatePerimeter(length, width) {return (2 * length) + (2 * width);}
+		function calculateArea(length, width) {return length * width;}
+		function writeResultAlert(propertyString, propertyValue) {alert(`The ${propertyString} of your rectangle is ${propertyValue}`);}
+
+	// function calls
+	// get length and width from prompt.
+	// enter numbers for these values when prompted.
+        let length = parseFloat(prompt("Enter a rectangle length"));
+        let width = parseFloat(prompt("Enter a rectangle width"));
+
+	// Calculate area and perimeter using functions declared above.
+        let area = calculateArea(length, width);
+		let perimeter = calculatePerimeter(length, width);
+
+	// Write the results to an alert.
+		writeResultAlert("area", area);
+		writeResultAlert("perimeter", perimeter);		
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Thanks for using the rectangle area and perimeter calculator application</h1>
+    </main>
+</body>
+</html>
