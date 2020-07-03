@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">	
+    <title>Average Test Scores</title>
+    <script>
+        //first use a do-while loop to get scores from user
+		function getScores() {
+			let scores = [];
+			let entry;
+			do {
+				entry = parseInt(prompt("Enter test score\n" +
+							   "Or enter 999 to end entries", 999));
+				if (entry >= 0 && entry <= 100) {
+					scores[scores.length] = entry;
+				} else if (entry != 999){
+					alert("Entry must by a valid number from 0 through 100\n" +
+						  "Or enter 999 to end entries");
+				}
+			}
+			while (entry != 999); 
+			return scores;
+		}
+		
+		let scores = getScores();
+
+        //next use a for loop to process the scores
+        let total = 0;
+		let highestScore = scores[0];
+        let show = "The test scores:\n";
+        for (let i = 0; i < scores.length; i++) {
+            total += scores[i];       //both are numbers so adds
+            show += scores[i] + "\n";  //strings & numbers so concatenates
+			
+			// Compare current score to current value held in highestScore, and change it if score is greater.
+			if (scores[i] > highestScore) {
+				highestScore = scores[i];
+			}
+        }
+
+        //then calculate the average and display
+        let average = parseInt(total/scores.length);
+        alert(show + "\nAverage score is " + average +
+		"\nThe highest score is " + highestScore);
+    </script>
+</head>
+<body>
+    <main>
+        <!-- Will show after JavaScript has run -->
+        <h1>Thanks for using the Test Scores application!</h1>
+    </main>
+</body>
+</html>
